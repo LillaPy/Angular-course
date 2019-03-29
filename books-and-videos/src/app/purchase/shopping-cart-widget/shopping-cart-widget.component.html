@@ -1,0 +1,8 @@
+<div class=" text-white">
+    <icon name="shopping-cart" size="2x"></icon>
+    <span class="ml-2 mr-2">{{cart.count}} products</span>
+    <span *ngIf="cart.amount > 0">[{{cart.amount | currency:'SEK'}}]</span>
+    <a *ngIf="cart.amount > 0" routerLink="/purchase/shopping-cart-view" class="btn btn-success btn-sm ml-2">
+        <icon name="list-alt"></icon> Show/Edit Cart
+    </a>
+</div>

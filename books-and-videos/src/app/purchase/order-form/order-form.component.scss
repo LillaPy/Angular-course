@@ -1,0 +1,27 @@
+
+thead th {
+    text-align: right;
+}
+
+thead th:first-child {
+    text-align: left;
+}
+
+
+tbody td {
+    text-align: right;
+}
+
+tbody td:first-child {
+    text-align: left;
+}
+
+
+tfoot th, tfoot td {
+    text-align: right;
+    border: none;
+}
+
+tfoot .summary {
+    border-top: thin double #444444;
+}

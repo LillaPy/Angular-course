@@ -1,0 +1,135 @@
+
+books:
+- title: Android in Action, Third Edition
+  authors:
+  - W. Frank Ableson
+  - Robi Sen
+  - Chris King
+  - C. Enrique Ortiz
+  publisher: Manning
+  isbn: 9781617290503
+  pages: 664
+  date: 2011-11
+  image: ISBN-9781617290503.png
+  price: 310
+
+- title: Angular in Action
+  authors:
+  - Jeremy Wilken
+  publisher: Manning
+  isbn: 9781617293313
+  pages: 275
+  date: 2017-11
+  image: ISBN-9781617293313.png
+  price: 290
+
+- title: RxJS in Action
+  authors:
+  - Paul P. Daniels
+  - Luis Atencio
+  publisher: Manning
+  isbn: 9781617293412
+  pages: 400
+  date: 2017-07
+  image: ISBN-9781617293412.png
+  price: 250
+
+- title: Java Testing with Spock
+  authors:
+  - Konstantinos Kapelonis
+  publisher: Manning
+  isbn: 9781617292538
+  pages: 304
+  date: 2016-03
+  image: ISBN-9781617292538.png
+  price: 185
+
+- title: Functional Programming in C++
+  authors:
+  - Ivan Cukic
+  publisher: Manning
+  isbn: 9781617293818
+  pages: 325
+  date: 2018-01
+  image: ISBN-9781617293818.png
+  price: 295
+
+- title: Seven Web Frameworks in Seven Weeks
+  authors:
+  - Jack Moffitt
+  - Fred Daoud
+  publisher: The Pragmatic Bookshelf
+  isbn: 9781937785635
+  pages: 302
+  date: 2014-01
+  image: ISBN-9781937785635.jpg
+  price: 430
+
+- title: Seven Languages in Seven Weeks
+  authors:
+  - Bruce A. Tate
+  publisher: The Pragmatic Bookshelf
+  isbn: 9781934356593
+  pages: 430
+  date: 2012-03
+  image: ISBN-9781934356593.jpg
+  price: 515
+
+- title: Getting Started with Gulp, 2nd ed
+  authors:
+  - Travis Maynard
+  publisher: Packt Publishing
+  isbn: 1787285944
+  pages: 132
+  date: 2017-04
+  image: ISBN-1787285944.gif
+  price: 350
+
+- title: JSON at Work
+  authors:
+  - Tom Marrs
+  publisher: O'Reilly Media
+  isbn: 9781449358327
+  pages: 337
+  date: 2017-03
+  image: ISBN-9781449358327.gif
+  price: 330
+
+- title: JavaScript: The Good Parts
+  authors:
+  - Douglas Crockford
+  publisher: O'Reilly Media
+  isbn: 9780596517748
+  pages: 172
+  date: 2008-12
+  image: ISBN-9780596517748.gif
+  price: 320
+
+videos:
+- title: Blade Runner 2049
+  category: Sci-Fi
+  length: 120
+  image: blade-runner-2.jpg
+  price: 125
+  date: 2017-10
+
+- title: Wonder Woman
+  category: Action
+  length: 141
+  image: wonder-woman.jpg
+  price: 135
+  date: 2017-06
+
+- title: Alien: Covenant
+  category: Sci-Fi
+  length: 122
+  image: alien-covenant.jpg
+  price: 145
+  date: 2017-05
+
+- title: Zoolander 2
+  category: Comedy
+  length: 102
+  image: zoolander-2.jpg
+  price: 105
+  date: 2016-02

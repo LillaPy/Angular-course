@@ -1,0 +1,110 @@
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">Your Products</div>
+            <div class="card-body">
+                <table class="table table-sm">
+                    <thead>
+                        <tr class="bg-dark text-light">
+                            <th>Title</th>
+                            <th>Price</th>
+                            <th>Qty</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr *ngFor="let item of items">
+                            <td>{{item.product.title}}</td>
+                            <td>{{item.product.price | currency:'SEK'}}</td>
+                            <td>{{item._count}}</td>
+                            <td>{{item.amount | currency:'SEK'}}</td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <th colspan="2"></th>
+                            <th class="summary">Sum Amount:</th>
+                            <td class="summary">{{amount | currency:'SEK'}}</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2"></th>
+                            <th>VAT ({{vatPercentage | percent:'1.0-0'}})</th>
+                            <td>{{vatAmount | currency:'SEK'}}</td>
+                        </tr>
+                        <tr>
+                            <th colspan="2"></th>
+                            <th>Shipping</th>
+                            <td>{{shippingFee | currency:'SEK'}}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"></td>
+                            <th class="summary">Amount Payable</th>
+                            <td class="summary">{{totalAmount | currency:'SEK'}}</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-3 mb-5">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">Your Name &amp; Address</div>
+            <div class="card-body">
+                <form novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <label for="name">First and Last Name</label>
+                        <input type="text" id="name" formControlName="name" class="form-control" placeholder="First and last name"/>
+                    </div>
+
+                    <fieldset formGroupName="contact">
+                        <legend>Contact</legend>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" formControlName="email" class="form-control" placeholder="Email address"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="tel" id="phone" formControlName="phone" class="form-control" placeholder="Phone number"/>
+                        </div>
+                    </fieldset>
+
+                    <fieldset formGroupName="address">
+                        <legend>Address</legend>
+                        <div class="form-group">
+                            <label for="street">Street</label>
+                            <input type="text" id="street" formControlName="street" class="form-control" placeholder="Street name"/>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-4">
+                                <div class="form-group">
+                                    <label for="postCode">Post Code</label>
+                                    <input type="text" id="postCode" formControlName="postCode" class="form-control" placeholder="Postal code"/>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="city">City</label>
+                                    <input type="text" id="city" formControlName="city" class="form-control" placeholder="City name"/>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-group text-center px-5">
+                        <button type="submit" class="btn btn-success btn-block " [disabled]="submitting">
+                            <icon name="truck"></icon>
+                            Send me my Stuff
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

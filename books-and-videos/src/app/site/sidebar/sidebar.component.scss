@@ -1,0 +1,17 @@
+
+li {
+    padding-left: 1rem;
+
+    a {
+        color: white;
+    }
+
+    a:hover {
+        color: navy;
+    }
+}
+
+li:hover {
+    background-color: #b0e0e6;
+    border-radius: 4px;
+}

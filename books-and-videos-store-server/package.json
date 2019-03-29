@@ -1,0 +1,19 @@
+{
+  "name": "books-and-videos-store-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.14.0",
+    "njwt": "^0.4.0",
+    "secure-random": "^1.1.1",
+    "yamljs": "^0.3.0"
+  }
+}

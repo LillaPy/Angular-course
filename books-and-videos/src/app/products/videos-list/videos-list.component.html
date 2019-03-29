@@ -1,0 +1,63 @@
+<div class="row">
+    <div class="col">
+        <h2 class="text-primary">Video</h2>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <form>
+            <input type="search" class="search-box " [formControl]="searchPhrase" placeholder="Search for videos" />
+            <button class="close-icon" (click)="clearSearchField()"></button>
+        </form>
+    </div>
+    <div class="col">
+        <div class="input-group">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">by category: </span>
+            </div>
+            <select id="byCategories" class="form-control " #catsel (change)="filterCategory(catsel)">
+                <option>All</option>
+                <option *ngFor="let category of categories">
+                    {{category}}
+                </option>
+                <!--todo: populate this drop list with categories and impl filtering by categories -->
+            </select>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col">
+
+        <div *ngFor="let video of videos; index as rowNumber">
+            <div class="card mt-3">
+                <div class="card-header p-1 bg-primary text-white">
+                    <h4>{{video.title}}</h4>
+                </div>
+                <div class="card-body py-0 pt-1">
+                    <img [src]="video.imageUrl" class="float-left img-fluid">
+                    <dl class="row my-0">
+                        <dt class="col-sm-2 my-0">Length:</dt>
+                        <dd class="col-sm-10 my-0">{{video.length}}</dd>
+
+                        <dt class="col-sm-2 my-0">Category:</dt>
+                        <dd class="col-sm-10 my-0">{{video.category}}</dd>
+
+                        <dt class="col-sm-2 my-0">Released:</dt>
+                        <dd class="col-sm-10 my-0">{{video.date}}</dd>
+                    </dl>
+                </div>
+                <div class="card-footer bg-transparent text-dark py-1">
+                    <span class="h5">{{video.price | currency:'SEK'}}</span>
+                    <button type="button" (click)="addToCart(video)" class="btn btn-success btn-sm rounded float-right">
+                        <icon name="plus"></icon>
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

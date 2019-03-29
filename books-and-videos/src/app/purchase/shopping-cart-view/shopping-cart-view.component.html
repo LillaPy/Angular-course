@@ -1,0 +1,69 @@
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <div class="card-header">
+                Your Shopping Cart
+            </div>
+
+            <div class="card-body">
+                <p *ngIf="empty" class="text-center text-danger">
+                    <icon name="shopping-cart" [rotate]="180"></icon>
+                    Your shopping cart is empty.
+                </p>
+                <table *ngIf="!empty" class="table table-hover table-responsive table-sm">
+                    <thead>
+                        <tr class="py-0">
+                            <th></th>
+                            <th>Title</th>
+                            <th class="numeric">Price</th>
+                            <th class="numeric">Qty</th>
+                            <th class="numeric">Amount</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr *ngFor="let item of items">
+                            <td>
+                                <div class="img-container">
+                                    <img src="{{item.product.imageUrl}}"/>
+                                </div>
+                            </td>
+                            <td>{{item.product.title}}</td>
+                            <td class="numeric">{{item.product.price | currency:'SEK'}}</td>
+                            <td class="numeric">
+                                <input type="number" min="1" name="count" [(ngModel)]="item._count"/>
+                            </td>
+                            <td class="numeric">{{item.amount | currency:'SEK'}}</td>
+                            <td>
+                                <button type="button" (click)="remove(item.product)" class="btn btn-danger btn-sm">
+                                    <icon name="trash"></icon>
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                    <tfoot>
+                        <tr>
+                            <td colspan="3"></td>
+                            <td>Total Amount:</td>
+                            <td class="numeric total">{{amount | currency:'SEK'}}</td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+
+            <div class="card-footer text-center">
+                <button type="button" (click)="clearShoppingCart()" [disabled]="empty" class="btn btn-danger mr-3">
+                    <icon name="trash"></icon>
+                    Clear Cart
+                </button>
+                <button type="button" routerLink="/purchase/order-form" [disabled]="empty" class="btn btn-primary">
+                    <icon name="credit-card"></icon>
+                    Goto Payment
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
